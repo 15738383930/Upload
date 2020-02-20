@@ -263,6 +263,8 @@ public interface CommUtil {
 			while ((byteread = inStream.read(buffer)) != -1) {
 				fs.write(buffer, 0, byteread);
 			}
+			fs.close();
+			inStream.close();
 			return new File(newFileUrl + fileName).exists();
 		}
 
